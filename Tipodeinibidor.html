@@ -1,0 +1,98 @@
+<!doctype html> 
+
+<html> 
+
+<head>
+	<title> Teste </title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.texto{ 
+			font-size: 20px;
+		}
+		.container {
+			display: flex;
+			align-content: center;
+			flex-direction: column;
+			justify-content: center
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+
+<body>
+	<div id="cabecalho">
+				<div id="titulo">
+					<h1>Simulador</h1>
+				</div>
+				<div id="menu">
+					<a href="index.html">HOME</a> |
+					<a href="quemsou.html">QUEM SOU</a> |
+					<a href="Tipodeinibidor.html">TIPO DE INIBIDOR</a> |
+					<a href="testando.html">ADICIONAIS</a> |
+					<a href="custo.html">CUSTO</a> 	
+				</div>
+	</div>
+	
+	<div>
+	<div class="form-style-2">
+		<div class="form-style-2-heading">Simulador</div>
+		
+			<!--CAMPO TAXA DE AGUA -->
+			<label for="agua" ><span>Taxa de água em kg/d<span class="required">*</span> </span> 
+			<input type="numeric" required="required" name="agua" id="agua" pattern="[0-9]+$" class="input-field"/>
+			</label>
+			<!--FIM-->
+
+			<!--CAMPO TAXA DE OLEO-->
+			<label for="taxaOLeo"><span>Taxa de óleo em kg/d<span class="required">*</span></span>
+			<input type="numeric" value="" required="required" name="oleo" id="oleo" pattern="[0-9]+$" class="input-field"/>
+			</label>
+			<!--FIM-->
+
+			<!--CAMPO TAXA DE GÁS-->
+			<label for="taxaGas"><span>Taxa de gás em kg/d<span class="required">*</span></span>
+			<input type="numeric" value="" required="required" name="gas" id="gas" pattern="[0-9]+$" class="input-field"/>
+		  </label>
+			<!--FIM-->
+			<!--CAMPO PRESSAO-->
+			<label for="pressao"><span>Pressão em psi<span class="required">*</span></span>
+			<input type="numeric" value="" required="required" name="pressao" id="pressao" pattern="[0-9]+$" class="input-field"/>
+			</label>
+			<!--FIM-->
+
+
+			<!--CAMPO TAXA DE EXTERIOR-->
+			<label for="tempExterior"><span>Temperatura do exterior em C<span class="required">*</span></span>
+			<input type="numeric" value="" required="required" name="te" id="te" pattern="[0-9]+$" class="input-field"/>
+			</label>
+			<!--FIM-->
+
+			<!--CAMPO DE RESPOSTA-->
+			<br>
+			<div id="LHI"></div>
+			<div id="THI"></div>
+			<div id="w"></div>
+			<div id="quantidade"></div>
+			<div id="taxaMassaInibidor"></div>
+			<div id="custo"></div>
+			<!--FIM-->
+			<button onclick="inibidor()">Teste</button>
+			
+	</div>
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+		function inibidor(){
+			//primeiro determinar o tipo de inibidor a ser usado.
+			if(document.getElementById("pressao").value >= 1500){
+				let LHI = document.getElementById("LHI");
+				LHI.innerHTML = "TIPO DE INIBIDOR: LHI - Inibidor de Baixa dosagem";
+			}else{
+				let termodinamico = document.getElementById("THI");
+				termodinamico.innerHTML = "TIPO DE INIBIDOR: THI - Inibidor Termodinâmico";
+			}
+
+				}
+	</script>
+		</body>
+</html>
